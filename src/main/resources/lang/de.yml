@@ -1,0 +1,32 @@
+﻿# ============================================================
+# EligiusHiddenArmor - Deutsche Sprachdatei
+# ============================================================
+
+# --- Allgemeine Befehle ---
+visibility_hidden: "<gray>Versteckt"
+visibility_shown: "<aqua>Sichtbar"
+armor_visibility: "<green>Sichtbarkeit deiner Rüstung: {visibility}"
+armor_visibility_other: "<green>Sichtbarkeit der Rüstung von {player}: {visibility}"
+
+# --- Administration & Nützliches ---
+no_permission: "<red>Du hast keine Berechtigung dafür."
+player_not_found: "<red>Spieler nicht gefunden."
+player_only: "<red>Nur Spieler können diesen Befehl verwenden."
+command_invalid: "<red>Ungültiger Befehl. Verwende '/eha help' für Hilfe."
+reloaded: "<green>Konfiguration erfolgreich neu geladen."
+
+# --- Hilfemenü ---
+help_header: "<gray>========== <aqua>EligiusHiddenArmor</aqua> =========="
+help_toggle: "<yellow>/eha toggle [piece]</yellow> <gray>- Schaltet deine eigene Rüstung um.</gray>"
+help_toggle_other: "<yellow>/eha toggle <piece> <spieler></yellow> <gray>- Schaltet die Rüstung eines anderen um.</gray>"
+help_reload: "<yellow>/eha reload</yellow> <gray>- Lädt die globale Konfiguration neu.</gray>"
+help_footer: "<gray>========================================"
+
+# --- Updates ---
+update_available_header: "<dark_gray><strikethrough>--------------------------------------------------</strikethrough></dark_gray>\n<gradient:#9b59b6:#8e44ad><b>EligiusHiddenArmor</b></gradient> <dark_gray>◆</dark_gray> <yellow>Update verfügbar!</yellow>"
+update_available_versions: "<gray>Deine Version:</gray> <red>v{current}</red> <dark_gray>|</dark_gray> <gray>Neue Version:</gray> <green>v{new}</green>"
+update_available_download: "<click:open_url:'{url}'><hover:show_text:'<green>Klicken um Modrinth zu öffnen</green>'><gray>► Klicke hier zum Herunterladen</gray></hover></click>\n<dark_gray><strikethrough>--------------------------------------------------</strikethrough></dark_gray>"
+
+# --- Gegenstand Lore (Verwende native '&' Farben für ItemStack Lore) ---
+item_durability: "&fHaltbarkeit: %color%%percentage%%"
+

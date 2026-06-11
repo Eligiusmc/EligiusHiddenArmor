@@ -1,0 +1,32 @@
+﻿# ============================================================
+# EligiusHiddenArmor - Русский Языковой Файл
+# ============================================================
+
+# --- Основные Команды ---
+visibility_hidden: "<gray>Скрыта"
+visibility_shown: "<aqua>Видима"
+armor_visibility: "<green>Видимость вашей брони: {visibility}"
+armor_visibility_other: "<green>Видимость брони {player}: {visibility}"
+
+# --- Администрация и Утилиты ---
+no_permission: "<red>У вас нет прав для этого."
+player_not_found: "<red>Игрок не найден."
+player_only: "<red>Только игроки могут использовать эту команду."
+command_invalid: "<red>Неверная команда. Используйте '/eha help' для помощи."
+reloaded: "<green>Конфигурация успешно перезагружена."
+
+# --- Меню Помощи ---
+help_header: "<gray>========== <aqua>EligiusHiddenArmor</aqua> =========="
+help_toggle: "<yellow>/eha toggle [piece]</yellow> <gray>- Переключить вашу броню.</gray>"
+help_toggle_other: "<yellow>/eha toggle <игрок></yellow> <gray>- Переключить броню другого.</gray>"
+help_reload: "<yellow>/eha reload</yellow> <gray>- Перезагрузить глобальную конфигурацию.</gray>"
+help_footer: "<gray>========================================"
+
+# --- Обновления ---
+update_available_header: "<dark_gray><strikethrough>--------------------------------------------------</strikethrough></dark_gray>\n<gradient:#9b59b6:#8e44ad><b>EligiusHiddenArmor</b></gradient> <dark_gray>◆</dark_gray> <yellow>Доступно обновление!</yellow>"
+update_available_versions: "<gray>Ваша версия:</gray> <red>v{current}</red> <dark_gray>|</dark_gray> <gray>Новая версия:</gray> <green>v{new}</green>"
+update_available_download: "<click:open_url:'{url}'><hover:show_text:'<green>Нажмите, чтобы открыть Modrinth</green>'><gray>► Нажмите здесь, чтобы скачать</gray></hover></click>\n<dark_gray><strikethrough>--------------------------------------------------</strikethrough></dark_gray>"
+
+# --- Описание предметов (Используйте '&' для цветов ItemStack Lore) ---
+item_durability: "&fПрочность: %color%%percentage%%"
+

@@ -1,0 +1,32 @@
+﻿# ============================================================
+# EligiusHiddenArmor - Arquivo de Idioma Português
+# ============================================================
+
+# --- Comandos Gerais ---
+visibility_hidden: "<gray>Oculta"
+visibility_shown: "<aqua>Visível"
+armor_visibility: "<green>Visibilidade da sua armadura: {visibility}"
+armor_visibility_other: "<green>Visibilidade da armadura de {player}: {visibility}"
+
+# --- Administração e Utilidade ---
+no_permission: "<red>Você não tem permissão para fazer isso."
+player_not_found: "<red>Jogador não encontrado."
+player_only: "<red>Apenas jogadores podem usar este comando."
+command_invalid: "<red>Comando inválido. Use '/eha help' para ajuda."
+reloaded: "<green>Configuração recarregada com sucesso."
+
+# --- Menu de Ajuda ---
+help_header: "<gray>========== <aqua>EligiusHiddenArmor</aqua> =========="
+help_toggle: "<yellow>/eha toggle [piece]</yellow> <gray>- Alterna sua própria armadura.</gray>"
+help_toggle_other: "<yellow>/eha toggle <piece> <jogador></yellow> <gray>- Alterna a armadura de outro.</gray>"
+help_reload: "<yellow>/eha reload</yellow> <gray>- Recarrega a configuração global.</gray>"
+help_footer: "<gray>========================================"
+
+# --- Atualizações ---
+update_available_header: "<dark_gray><strikethrough>--------------------------------------------------</strikethrough></dark_gray>\n<gradient:#9b59b6:#8e44ad><b>EligiusHiddenArmor</b></gradient> <dark_gray>◆</dark_gray> <yellow>Atualização Disponível!</yellow>"
+update_available_versions: "<gray>Sua versão:</gray> <red>v{current}</red> <dark_gray>|</dark_gray> <gray>Nova versão:</gray> <green>v{new}</green>"
+update_available_download: "<click:open_url:'{url}'><hover:show_text:'<green>Clique para abrir o Modrinth</green>'><gray>► Clique aqui para baixar</gray></hover></click>\n<dark_gray><strikethrough>--------------------------------------------------</strikethrough></dark_gray>"
+
+# --- Lores de Item (Use cores nativas '&' para ItemStack Lore) ---
+item_durability: "&fDurabilidade: %color%%percentage%%"
+

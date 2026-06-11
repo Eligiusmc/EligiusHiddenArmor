@@ -1,0 +1,61 @@
+plugins {
+    `java-library`
+    `maven-publish`
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+}
+
+repositories {
+    mavenLocal()
+    maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
+    maven { url = uri("https://oss.sonatype.org/content/groups/public/") }
+    maven { url = uri("https://jitpack.io") }
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
+    
+    // Core Dependencies
+    implementation("net.kyori:adventure-api:4.17.0")
+    implementation("net.kyori:adventure-text-minimessage:4.17.0")
+    implementation("com.zaxxer:HikariCP:5.1.0")
+    implementation("org.bstats:bstats-bukkit:3.2.1")
+    implementation("redis.clients:jedis:5.1.2")
+
+    // Testing Dependencies
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v1.21:4.24.2")
+}
+
+group = "{group_id}"
+version = "1.0.0"
+description = "{plugin_name}"
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+tasks.named<ProcessResources>("processResources") {
+    filesMatching("plugin.yml") {
+        expand("projectVersion" to version)
+    }
+}
+
+tasks.named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
+    archiveClassifier.set("")
+    relocate("org.bstats", "{group_id}.{plugin_name_lower}.libs.bstats")
+    relocate("redis.clients.jedis", "{group_id}.{plugin_name_lower}.libs.jedis")
+    relocate("org.apache.commons.pool2", "{group_id}.{plugin_name_lower}.libs.commons.pool2")
+    relocate("org.json", "{group_id}.{plugin_name_lower}.libs.json")
+}

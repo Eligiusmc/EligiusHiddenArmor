@@ -1,0 +1,45 @@
+package {package};
+
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bstats.bukkit.Metrics;
+
+public class {MainClass} extends JavaPlugin {
+    
+    private boolean isFolia = false;
+
+    @Override
+    public void onEnable() {
+        long startTime = System.currentTimeMillis();
+        
+        try {
+            Class.forName("io.papermc.paper.threadedregions.RegionizedServer");
+            isFolia = true;
+        } catch (ClassNotFoundException | NoClassDefFoundError ignored) {}
+        
+        String platformStr = isFolia ? "Folia" : "Paper/Spigot";
+        getLogger().info("Starting {MainClass} on platform: " + platformStr);
+        
+        // TODO: Initialize your ConfigAdapter
+        // TODO: Initialize your DatabaseAdapter (HikariCP)
+        // TODO: Initialize your SyncPort (RedisAdapter)
+        // TODO: Initialize your Core Services and Listeners
+        
+        // Metrics
+        Metrics metrics = new Metrics(this, 0); // Replace 0 with your bStats plugin ID
+        
+        long endTime = System.currentTimeMillis();
+        getLogger().info("Successfully enabled in " + (endTime - startTime) + "ms.");
+    }
+
+    @Override
+    public void onDisable() {
+        // TODO: Close database connections
+        // TODO: Close Redis connections
+        // TODO: Cancel active tasks
+        getLogger().info("Successfully disabled.");
+    }
+    
+    public boolean isFolia() {
+        return isFolia;
+    }
+}

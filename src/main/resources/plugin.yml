@@ -1,0 +1,22 @@
+name: EligiusHiddenArmor
+version: '${version}'
+main: com.makrozai.eligiushiddenarmor.EligiusHiddenArmor
+api-version: '1.21'
+authors: [ makrozai ]
+description: Let players hide their armor and show off their skins
+
+commands:
+  eligiushiddenarmor:
+    description: "Main EligiusHiddenArmor command."
+    aliases: [eha, ha, hiddenarmor]
+
+permissions:
+  eligiushiddenarmor.toggle:
+    description: "Allows toggling own armor visibility"
+    default: true
+  eligiushiddenarmor.toggle.other:
+    description: "Allows toggling other players armor visibility"
+    default: op
+  eligiushiddenarmor.reload:
+    description: "Allows reloading the plugin"
+    default: op

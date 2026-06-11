@@ -1,0 +1,32 @@
+---
+layout: home
+title: "EligiusHiddenArmor - Oculta armaduras eficientemente"
+description: "El plugin definitivo para ocultar visualmente la armadura en Bukkit, Spigot, Paper, Purpur y Folia 1.21 - 26.1.2+."
+
+hero:
+  name: "EligiusHiddenArmor"
+  text: "Oculta armaduras eficientemente"
+  tagline: "Oculta armaduras sin lag del servidor a través de paquetes. Soporte Folia y sincronización Redis."
+  image:
+    src: /assets/angry.png
+    alt: Eligius Logo
+  actions:
+    - theme: brand
+      text: Instalación
+      link: /es/installation
+    - theme: alt
+      text: Download Release
+      link: https://github.com/Eligiusmc/EligiusHiddenArmor/releases/latest
+
+features:
+  - title: Cero Lag (API Nativa)
+    details: Oculta armaduras puramente a nivel de red usando PacketEvents sin consumir memoria RAM.
+  - title: Folia y Escalabilidad
+    details: Arquitectura asíncrona lista para redes usando HikariCP para conexiones MySQL/SQLite.
+  - title: Sincronización Redis
+    details: Sincronización instantánea en tiempo real en redes proxy mediante Redis Pub/Sub.
+  - title: Excepción Inteligente de Elytras
+    details: Las Elytras nunca se ocultan automáticamente, garantizando que todos los jugadores en el servidor puedan ver el vuelo de manera natural.
+  - title: Métricas Anónimas
+    details: Usa bStats para recopilar estadísticas anónimas para ayudarnos a mejorar.
+---
