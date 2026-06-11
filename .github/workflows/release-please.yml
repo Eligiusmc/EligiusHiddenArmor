@@ -51,6 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           rm build/libs/*-plain.jar || true
+          rm build/libs/*-original.jar || true
           gh release upload ${{ steps.release.outputs.tag_name }} build/libs/EligiusHiddenArmor*.jar --clobber
 
       - name: Publish to Modrinth
