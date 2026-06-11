@@ -97,7 +97,7 @@ public class EntityEquipmentPacketListener extends PacketListenerAbstract implem
     private boolean shouldIgnore(ItemStack itemStack) {
         Material material = itemStack.getType();
 
-        if (material == Material.ELYTRA) return true;
+        if (material == Material.ELYTRA) return ignoreElytra;
 
         return (ignoreLeatherArmor && material.toString().startsWith("LEATHER")) ||
                 (ignoreTurtleHelmet && material == Material.TURTLE_HELMET) ||
