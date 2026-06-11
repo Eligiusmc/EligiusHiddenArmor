@@ -19,12 +19,10 @@ import java.util.List;
 public class WindowItemsPacketListener extends PacketListenerAbstract {
     private final ArmorHideService ArmorHideService;
     private final ArmorPlaceholderHandler placeholderHandler;
-    private final EligiusHiddenArmor plugin;
 
     public WindowItemsPacketListener(EligiusHiddenArmor plugin) {
         this.ArmorHideService = plugin.getArmorHideService();
         this.placeholderHandler = plugin.getArmorPlaceholderHandler();
-        this.plugin = plugin;
     }
 
     @SuppressWarnings("deprecation")
