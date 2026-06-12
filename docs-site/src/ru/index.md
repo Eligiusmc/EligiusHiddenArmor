@@ -1,7 +1,7 @@
 ---
 layout: home
 title: "EligiusHiddenArmor - Скрытие брони"
-description: "Ультра-эффективный плагин для скрытия брони на Bukkit, Spigot, Paper, Purpur и Folia 1.21 - 26.1.2+."
+description: "Ультра-эффективный плагин для скрытия брони на Bukkit, Spigot, Paper, Purpur и Folia 1.21 - 1.21.x."
 
 hero:
   name: "EligiusHiddenArmor"

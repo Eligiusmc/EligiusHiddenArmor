@@ -1,7 +1,7 @@
 ---
 layout: home
 title: "EligiusHiddenArmor - Masquer l'armure"
-description: "Plugin ultra-efficace pour masquer visuellement l'armure sur Bukkit, Spigot, Paper, Purpur et Folia 1.21 - 26.1.2+."
+description: "Plugin ultra-efficace pour masquer visuellement l'armure sur Bukkit, Spigot, Paper, Purpur et Folia 1.21 - 1.21.x."
 
 hero:
   name: "EligiusHiddenArmor"

@@ -35,12 +35,17 @@ jobs:
     - name: Extract Version from gradle.properties
       id: extract_version
       run: |
-        VERSION=$(grep -oP '^pluginVersion=\K.*' gradle.properties || echo "1.0.0")
+        VERSION=$(grep -oP '^version=\K.*' gradle.properties || echo "1.0.0")
         echo "VERSION=$VERSION" >> $GITHUB_ENV
         echo "Extracted version: $VERSION"
 
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: Remove Original and Plain JARs
+      run: |
+        rm build/libs/*-plain.jar || true
+        rm build/libs/*-original.jar || true
 
     - name: Create Beta Release on GitHub
       uses: softprops/action-gh-release@v2

@@ -50,15 +50,7 @@ public class SetSlotPacketListener extends PacketListenerAbstract {
                 wrapper.setItem(com.github.retrooper.packetevents.protocol.item.ItemStack.EMPTY);
             } else {
                 com.github.retrooper.packetevents.protocol.item.ItemStack pePlaceholder = SpigotConversionUtil.fromBukkitItemStack(placeholder);
-                net.kyori.adventure.text.Component translationComp = net.kyori.adventure.text.Component.translatable(("item.minecraft." + bukkitItem.getType().getKey().getKey())).color(net.kyori.adventure.text.format.NamedTextColor.GRAY);
-                
-                if (bukkitItem.getItemMeta() != null && bukkitItem.getItemMeta().hasDisplayName()) {
-                    net.kyori.adventure.text.Component customName = net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer.legacyAmpersand().deserialize(bukkitItem.getItemMeta().getDisplayName());
-                    translationComp = customName.append(net.kyori.adventure.text.Component.text(" &8(").color(net.kyori.adventure.text.format.NamedTextColor.DARK_GRAY))
-                                                .append(net.kyori.adventure.text.Component.translatable(("item.minecraft." + bukkitItem.getType().getKey().getKey())).color(net.kyori.adventure.text.format.NamedTextColor.GRAY))
-                                                .append(net.kyori.adventure.text.Component.text("&8)").color(net.kyori.adventure.text.format.NamedTextColor.DARK_GRAY));
-                }
-                pePlaceholder.setComponent(com.github.retrooper.packetevents.protocol.component.ComponentTypes.ITEM_NAME, translationComp);
+                com.makrozai.eligiushiddenarmor.util.PacketComponentUtil.injectTranslatedName(pePlaceholder, bukkitItem);
                 wrapper.setItem(pePlaceholder);
             }
         }

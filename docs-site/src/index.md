@@ -1,7 +1,7 @@
 ---
 layout: home
 title: "EligiusHiddenArmor - High-efficiency armor hider"
-description: "The ultimate, ultra-efficient visual armor hider for Bukkit, Spigot, Paper, Purpur and Folia 1.21 - 26.1.2+."
+description: "The ultimate, ultra-efficient visual armor hider for Bukkit, Spigot, Paper, Purpur and Folia 1.21 - 1.21.x."
 
 hero:
   name: "EligiusHiddenArmor"

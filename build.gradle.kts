@@ -1,12 +1,12 @@
 plugins {
     id("java")
-    id("com.gradleup.shadow") version "8.3.6"
+    id("com.gradleup.shadow") version "9.4.2"
     id("com.modrinth.minotaur") version "2.8.7"
     id("io.papermc.hangar-publish-plugin") version "0.1.2"
 }
 
 group = "com.makrozai"
-version = (property("pluginVersion") as String)
+version = (property("version") as String)
 description = "EligiusHiddenArmor"
 
 java {
@@ -42,7 +42,7 @@ dependencies {
     implementation("com.zaxxer:HikariCP:5.1.0")
 
     // PacketEvents
-    implementation("com.github.retrooper:packetevents-spigot:2.12.2")
+    compileOnly("com.github.retrooper:packetevents-spigot:2.12.2")
 
     // Tests
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
@@ -50,8 +50,10 @@ dependencies {
     testImplementation("com.github.seeseemelk:MockBukkit-v1.21:3.102.0")
 
     // Kyori Adventure
+    implementation("net.kyori:adventure-api:4.17.0")
     implementation("net.kyori:adventure-text-minimessage:4.17.0")
     implementation("net.kyori:adventure-text-serializer-legacy:4.17.0")
+    implementation("net.kyori:adventure-text-serializer-gson:4.17.0")
 }
 
 tasks {
@@ -67,6 +69,13 @@ tasks {
 
     shadowJar {
         archiveClassifier.set("")
+        relocate("net.kyori", "com.makrozai.eligiushiddenarmor.libs.kyori")
+        relocate("com.zaxxer.hikari", "com.makrozai.eligiushiddenarmor.libs.hikari")
+        relocate("redis.clients.jedis", "com.makrozai.eligiushiddenarmor.libs.jedis")
+        relocate("org.apache.commons.pool2", "com.makrozai.eligiushiddenarmor.libs.commons.pool2")
+        relocate("org.apache.commons.lang3", "com.makrozai.eligiushiddenarmor.libs.commons.lang3")
+        relocate("org.bstats", "com.makrozai.eligiushiddenarmor.libs.bstats")
+        relocate("org.json", "com.makrozai.eligiushiddenarmor.libs.json")
     }
 
     processResources {
@@ -90,14 +99,14 @@ val versionString: String = "${version}"
 // --- Modrinth Publishing Configuration ---
 modrinth {
     token.set(System.getenv("MODRINTH_API_TOKEN"))
-    projectId.set("eligiushiddenarmor")
+    projectId.set("2QfGinIn")
     versionNumber.set(versionString)
     
     val channelEnv = System.getenv("CHANNEL") ?: "Release"
     versionType.set(channelEnv.lowercase())
     
     uploadFile.set(tasks.named("shadowJar"))
-    gameVersions.addAll("1.21", "1.21.1", "1.21.3", "1.21.4", "26.1.1", "26.1.2")
+    gameVersions.addAll("1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4", "1.21.5", "1.21.6", "1.21.7", "1.21.8", "1.21.9", "1.21.10", "1.21.11", "26.1", "26.1.1", "26.1.2")
     loaders.addAll("bukkit", "spigot", "paper", "purpur", "folia")
     syncBodyFrom.set(rootProject.file("README.md").readText()) // Using README temporarily for Modrinth
     
@@ -132,7 +141,7 @@ hangarPublish {
         platforms {
             paper {
                 jar.set(tasks.named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar").flatMap { it.archiveFile })
-                platformVersions.set(listOf("1.21", "1.21.1", "1.21.3", "1.21.4", "26.1.1", "26.1.2"))
+                platformVersions.set(listOf("1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4", "1.21.5", "1.21.6", "1.21.7", "1.21.8", "1.21.9", "1.21.10", "1.21.11", "26.1", "26.1.1", "26.1.2"))
             }
         }
     }
