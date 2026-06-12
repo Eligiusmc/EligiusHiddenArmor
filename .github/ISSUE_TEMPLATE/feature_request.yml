@@ -1,0 +1,61 @@
+name: Tarea / Funcionalidad
+description: Proponer una nueva funcionalidad, mejora técnica profunda o tarea arquitectónica.
+title: "[Feature]: "
+labels: ["enhancement", "pending-triage"]
+assignees:
+  - makrozai
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tomarte el tiempo de estructurar detalladamente esta propuesta. Un buen diseño previo es clave para el éxito.
+  - type: textarea
+    id: description
+    attributes:
+      label: "📋 Descripción de la Tarea / Funcionalidad"
+      description: "Describe a detalle qué se quiere lograr, el contexto y por qué es fundamental para la proyección del proyecto."
+      placeholder: "Actualmente el sistema hace X, pero si implementamos Y, lograremos Z..."
+    validations:
+      required: true
+  - type: textarea
+    id: objectives
+    attributes:
+      label: "🎯 Objetivos y Casos de Uso"
+      description: "Enumera los objetivos técnicos o de UX que resolverá esta funcionalidad."
+      placeholder: "- [ ] Mejorar el rendimiento de base de datos.\n- [ ] Ofrecer soporte a usuarios Premium."
+    validations:
+      required: true
+  - type: textarea
+    id: technical_details
+    attributes:
+      label: "🛠️ Detalles Técnicos y Arquitectura"
+      description: "Qué tecnologías/dependencias están involucradas, qué archivos se afectarán y un borrador de la implementación algorítmica."
+      placeholder: "**Tecnologías:** Redis, PacketEvents\n**Archivos:** DatabaseAdapter.java\n**Implementación Sugerida:** Usar patrón X..."
+    validations:
+      required: true
+  - type: textarea
+    id: testing_flow
+    attributes:
+      label: "🧪 Casos de Prueba (Testing Flow)"
+      description: "Precondiciones, pasos para probarlo y el resultado esperado."
+      placeholder: "**Precondiciones:** Servidor Folia iniciado.\n**Flujo:**\n1. Entrar al servidor.\n2. Ejecutar /eha.\n**Resultado Esperado:** Se abre un GUI."
+    validations:
+      required: true
+  - type: textarea
+    id: impact_analysis
+    attributes:
+      label: "⚖️ Análisis de Impacto (Pros y Contras)"
+      description: "Ventajas, riesgos, posibles bugs y deuda técnica."
+      placeholder: "**Pros:** ...\n**Contras/Riesgos:** ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "📌 Prioridad"
+      options:
+        - "Alta 🔴"
+        - "Media 🟡"
+        - "Baja 🟢"
+    validations:
+      required: true
