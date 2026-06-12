@@ -4,6 +4,7 @@ main: com.makrozai.eligiushiddenarmor.EligiusHiddenArmor
 api-version: '1.21'
 authors: [ makrozai ]
 description: Let players hide their armor and show off their skins
+depend: [packetevents]
 
 commands:
   eligiushiddenarmor:

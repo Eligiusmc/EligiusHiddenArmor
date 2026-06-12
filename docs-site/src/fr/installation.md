@@ -3,17 +3,18 @@
 ## System Requirements
 
 - **Java**: Java 21 or higher.
-- **Minecraft Versions**: 1.21 up to 26.1.2+
+- **Minecraft Versions**: 1.21 up to 1.21.x
 - **Supported Software**: Spigot, Paper, Purpur, Folia, and other forks.
 
 ## Dependencies
 
-**EligiusHiddenArmor** is completely standalone. It natively shades PacketEvents, meaning you do not need to install any external API plugins.
+**EligiusHiddenArmor** requires **PacketEvents** to be installed on your server. You must download and install it in your plugins folder.
 
 ## Installation Steps
 
-1. Download the latest `EligiusHiddenArmor-1.0.0.jar` from the official page.
-2. Place the jar file inside your server's `plugins` folder.
-3. Start the server to generate the default configuration files.
-4. (Optional) Configure `config.yml` with your database credentials and Redis setup if running a proxy network.
-5. Restart the server.
+1. Download and install [PacketEvents](https://modrinth.com/plugin/packetevents) in your server's `plugins` folder.
+2. Download the latest `EligiusHiddenArmor-1.0.1.jar` from the official page.
+3. Place the jar file inside your server's `plugins` folder.
+4. Start the server to generate the default configuration files.
+5. (Optional) Configure `config.yml` with your database credentials and Redis setup if running a proxy network.
+6. Restart the server.

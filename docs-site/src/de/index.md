@@ -1,7 +1,7 @@
 ---
 layout: home
 title: "EligiusHiddenArmor - Rüstung verstecken"
-description: "Ultramodernes Plugin zum Verstecken von Rüstungen auf Bukkit, Spigot, Paper, Purpur und Folia 1.21 - 26.1.2+."
+description: "Ultramodernes Plugin zum Verstecken von Rüstungen auf Bukkit, Spigot, Paper, Purpur und Folia 1.21 - 1.21.x."
 
 hero:
   name: "EligiusHiddenArmor"

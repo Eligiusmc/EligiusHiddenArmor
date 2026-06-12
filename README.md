@@ -36,9 +36,12 @@
 
 ## 🚀 Quick Installation
 
-1. Download the latest `EligiusHiddenArmor-x.x.x.jar` from the [Releases page](https://github.com/Eligiusmc/EligiusHiddenArmor/releases).
-2. Drop it into your server's `plugins/` folder.
-3. Start your server! Supports versions 1.21 and above.
+> [!WARNING]
+> **EligiusHiddenArmor REQUIRES [PacketEvents](https://modrinth.com/plugin/packetevents) to be installed on your server.** The plugin will NOT start without it.
+
+1. Download and install `PacketEvents` into your `plugins/` folder.
+2. Download the latest `EligiusHiddenArmor-x.x.x.jar` from the [Releases page](https://github.com/Eligiusmc/EligiusHiddenArmor/releases) and drop it in as well.
+3. Start your server! Supports versions 1.21.x and above.
 4. Adjust the configuration and permissions to your liking.
 
 ---

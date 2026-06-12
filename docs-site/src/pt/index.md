@@ -1,7 +1,7 @@
 ---
 layout: home
 title: "EligiusHiddenArmor - Ocultar armaduras"
-description: "Plugin para ocultar visualmente a armadura no Bukkit, Spigot, Paper, Purpur e Folia 1.21 - 26.1.2+."
+description: "Plugin para ocultar visualmente a armadura no Bukkit, Spigot, Paper, Purpur e Folia 1.21 - 1.21.x."
 
 hero:
   name: "EligiusHiddenArmor"

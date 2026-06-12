@@ -25,7 +25,6 @@ public class EntityEquipmentPacketListener extends PacketListenerAbstract implem
 
     private boolean ignoreLeatherArmor;
     private boolean ignoreTurtleHelmet;
-    private boolean ignoreElytra;
 
     public EntityEquipmentPacketListener(EligiusHiddenArmor plugin) {
         plugin.addConfigHolder(this);
@@ -72,16 +71,7 @@ public class EntityEquipmentPacketListener extends PacketListenerAbstract implem
                     ItemStack placeholder = plugin.getArmorPlaceholderHandler().buildItemPlaceholder(bukkitItem, player);
                     if (placeholder != null && placeholder.getType() != Material.AIR) {
                         com.github.retrooper.packetevents.protocol.item.ItemStack pePlaceholder = SpigotConversionUtil.fromBukkitItemStack(placeholder);
-                        // Inject translation via Kyori Adventure Component 
-                        net.kyori.adventure.text.Component translationComp = net.kyori.adventure.text.Component.translatable(("item.minecraft." + bukkitItem.getType().getKey().getKey())).color(net.kyori.adventure.text.format.NamedTextColor.GRAY);
-                        
-                        if (bukkitItem.getItemMeta() != null && bukkitItem.getItemMeta().hasDisplayName()) {
-                            net.kyori.adventure.text.Component customName = net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer.legacyAmpersand().deserialize(bukkitItem.getItemMeta().getDisplayName());
-                            translationComp = customName.append(net.kyori.adventure.text.Component.text(" &8(").color(net.kyori.adventure.text.format.NamedTextColor.DARK_GRAY))
-                                                        .append(net.kyori.adventure.text.Component.translatable(("item.minecraft." + bukkitItem.getType().getKey().getKey())).color(net.kyori.adventure.text.format.NamedTextColor.GRAY))
-                                                        .append(net.kyori.adventure.text.Component.text("&8)").color(net.kyori.adventure.text.format.NamedTextColor.DARK_GRAY));
-                        }
-                        pePlaceholder.setComponent(com.github.retrooper.packetevents.protocol.component.ComponentTypes.ITEM_NAME, translationComp);
+                        com.makrozai.eligiushiddenarmor.util.PacketComponentUtil.injectTranslatedName(pePlaceholder, bukkitItem);
                         equipment.setItem(pePlaceholder);
                     } else {
                         equipment.setItem(com.github.retrooper.packetevents.protocol.item.ItemStack.EMPTY);
@@ -97,7 +87,7 @@ public class EntityEquipmentPacketListener extends PacketListenerAbstract implem
     private boolean shouldIgnore(ItemStack itemStack) {
         Material material = itemStack.getType();
 
-        if (material == Material.ELYTRA) return ignoreElytra;
+        if (material == Material.ELYTRA) return true;
 
         return (ignoreLeatherArmor && material.toString().startsWith("LEATHER")) ||
                 (ignoreTurtleHelmet && material == Material.TURTLE_HELMET) ||
@@ -108,6 +98,5 @@ public class EntityEquipmentPacketListener extends PacketListenerAbstract implem
     public void loadConfig(FileConfiguration config) {
         this.ignoreLeatherArmor = config.getBoolean("ignore.leather-armor");
         this.ignoreTurtleHelmet = config.getBoolean("ignore.turtle-helmet");
-        this.ignoreElytra = config.getBoolean("ignore.elytra");
     }
 }

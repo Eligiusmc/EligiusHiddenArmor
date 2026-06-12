@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("com.gradleup.shadow") version "8.3.6"
+    id("com.gradleup.shadow") version "9.4.2"
     id("com.modrinth.minotaur") version "2.8.7"
     id("io.papermc.hangar-publish-plugin") version "0.1.2"
 }
@@ -42,7 +42,7 @@ dependencies {
     implementation("com.zaxxer:HikariCP:5.1.0")
 
     // PacketEvents
-    implementation("com.github.retrooper:packetevents-spigot:2.12.2")
+    compileOnly("com.github.retrooper:packetevents-spigot:2.12.2")
 
     // Tests
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
@@ -50,8 +50,10 @@ dependencies {
     testImplementation("com.github.seeseemelk:MockBukkit-v1.21:3.102.0")
 
     // Kyori Adventure
+    implementation("net.kyori:adventure-api:4.17.0")
     implementation("net.kyori:adventure-text-minimessage:4.17.0")
     implementation("net.kyori:adventure-text-serializer-legacy:4.17.0")
+    implementation("net.kyori:adventure-text-serializer-gson:4.17.0")
 }
 
 tasks {
@@ -67,6 +69,13 @@ tasks {
 
     shadowJar {
         archiveClassifier.set("")
+        relocate("net.kyori", "com.makrozai.eligiushiddenarmor.libs.kyori")
+        relocate("com.zaxxer.hikari", "com.makrozai.eligiushiddenarmor.libs.hikari")
+        relocate("redis.clients.jedis", "com.makrozai.eligiushiddenarmor.libs.jedis")
+        relocate("org.apache.commons.pool2", "com.makrozai.eligiushiddenarmor.libs.commons.pool2")
+        relocate("org.apache.commons.lang3", "com.makrozai.eligiushiddenarmor.libs.commons.lang3")
+        relocate("org.bstats", "com.makrozai.eligiushiddenarmor.libs.bstats")
+        relocate("org.json", "com.makrozai.eligiushiddenarmor.libs.json")
     }
 
     processResources {
